@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoMain from "./components/todos/TodoMain";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Aside from "./components/menu/Aside";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+
+    return (
+        <div className='main_container'>
+            <Header/>
+          <div className='main_content'>
+            <Aside/>
+            <TodoMain/>
+          </div>
+
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;

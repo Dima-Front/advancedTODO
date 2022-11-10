@@ -1,4 +1,4 @@
-import {CHANGE_STATUS, SET_TODOS} from "../reducers/todoReducer";
+import {CHANGE_STATUS, FILTERED_TODO, SET_TODOS} from "../reducers/todoReducer";
 
 
 export const getTodosAC = (data) => {
@@ -11,5 +11,12 @@ export const getTodosAC = (data) => {
 export const changeStatusAC = () => {
     return {
         type: CHANGE_STATUS
+    }
+}
+
+export const filterTodoAC = (data) => {
+    return {
+        type: FILTERED_TODO,
+        payload: data
     }
 }

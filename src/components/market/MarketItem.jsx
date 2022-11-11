@@ -1,6 +1,10 @@
 import React from 'react';
 
 const MarketItem = ({title, desc, img}) => {
+
+    if (!img) {
+        return null
+    }
     return (
         <div className='card_container' >
            <div><img src={img} alt="пхото"/> </div>

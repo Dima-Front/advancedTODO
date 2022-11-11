@@ -8,27 +8,26 @@ const MarketMain = () => {
     const dispatch = useDispatch();
     const posts = useSelector(state => state.marketReducer.posts)
     const photos = useSelector(state => state.marketReducer.photos)
+    const urls = photos.map(photo => photo.url)
 
     useEffect(() => {
         requests.getAllPosts().then(res => dispatch(setPostsAC(res.data)))
         requests.getAllPhotos().then(res => dispatch(setPhotosAC(res.data)))
     }, [dispatch])
 
-    console.log(photos)
+    for (let i = 0; i <= posts.length - 1; i++) {
+        if (photos.length && urls.length) {
+            posts[i].url = urls[i]
+
+        }
+    }
     return (
         <div className='market_list'>
-            {posts
+            {posts && photos
                 ?
-                posts.map(post => <MarketItem key={post.id} title={post.title} desc={post.body}/>)
+                posts.map(post => <MarketItem key={post.id} title={post.title} desc={post.body}  img={post.url} />)
                 :
                 'no'}
-            {photos
-                ?
-                photos.map(photo => <MarketItem key={photo.id} img={photo.url}/>)
-                :
-                null
-            }
-
         </div>
     );
 };

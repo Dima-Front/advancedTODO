@@ -5,9 +5,9 @@ export  class  requests {
         return await  axios.get(`https://jsonplaceholder.typicode.com/todos`)
     }
     static async getAllPosts () {
-        return await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        return await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
     }
     static async getAllPhotos () {
-        return await axios.get(`https://jsonplaceholder.typicode.com/photos`)
+        return await axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=20`)
     }
 }

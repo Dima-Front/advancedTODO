@@ -10,7 +10,6 @@ const TodoItem = ({completed, title, todo}) => {
         if (Number(e.target.id) === Number(todo.id)) {
             setChecked(checked => !checked)
            completed = !!check.current.checked;
-            console.log(completed)
         }
     }
 

@@ -5,25 +5,24 @@ import Footer from "./components/footer/Footer";
 import Aside from "./components/menu/Aside";
 import {Route, Routes} from "react-router-dom";
 import CurrentTodo from "./components/todos/oneTodo/CurrentTodo";
+import MarketMain from "./components/market/MarketMain";
 
 
 function App() {
 
-
-
-
     return (
-        <div className='main_container'>
+        <>
             <Header/>
             <Aside/>
-              <Routes>
-                <Route path='/' element={<TodoMain/>}/>
-                  <Route path='/todo' element={<CurrentTodo/>}/>
-              </Routes>
-
-
+            <div className='main_container'>
+                <Routes>
+                    <Route path='/' element={<TodoMain/>}/>
+                    <Route path='/todo' element={<CurrentTodo/>}/>
+                    <Route path='/posts' element={<MarketMain/>}/>
+                </Routes>
+            </div>
             <Footer/>
-        </div>
+        </>
     );
 }
 

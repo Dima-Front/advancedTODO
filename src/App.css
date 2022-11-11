@@ -9,8 +9,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 10px;
-    background-color: wheat;
+    background-color: white;
 }
 .main_content {
     padding: 10px;
@@ -115,5 +116,37 @@
 }
 .button_group button {
     margin-bottom: 5px;
+}
+.market_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+   margin: 5px;
+    width: 70%;
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    padding-right: 16px;
+    border-right: 1px solid #e6e7eb;
+    max-width: 200px;
+    min-height: 400px;
+
+}
+.card_container button {
+    width: 100%;
+    background-color: #e52e6b;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 16px 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
 }
 

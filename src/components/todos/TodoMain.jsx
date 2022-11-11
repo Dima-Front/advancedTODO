@@ -28,7 +28,9 @@ const TodoMain = () => {
         requests.getAllTodos().then(res => dispatch(getTodosAC(res.data)))
     }, [dispatch])
 
+
     const showCompleted = () => {
+        
         const completed = todos.filter(todo => todo.completed)
         dispatch(filterTodoAC(completed))
     }

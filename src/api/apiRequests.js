@@ -1,13 +1,39 @@
 import axios from "axios";
+import {setTodosAC} from "../store/actions/todoActions";
+import {setPostsAC} from "../store/actions/marketActions";
 
-export  class  requests {
-    static async getAllTodos () {
-        return await  axios.get(`https://jsonplaceholder.typicode.com/todos`)
+class requests {
+    static async getAllTodos() {
+        const response =  await axios.get(`https://jsonplaceholder.typicode.com/todos`)
+        return response.data
     }
-    static async getAllPosts () {
-        return await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
+
+    static async getAllPosts() {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
+        return response.data
     }
-    static async getAllPhotos () {
-        return await axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=20`)
+
+    static async getAllPhotos() {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=20`)
+        return response.data
     }
+}
+
+
+export const getPosts = () => async dispatch => {
+
+    const [photos, posts] = await Promise.all([requests.getAllPhotos(), requests.getAllPosts()])
+
+    const updatedPosts = posts.map((post, index) => {
+        post.url = photos[index].url
+        return post
+    })
+
+    dispatch(setPostsAC(updatedPosts))
+}
+
+export const getTodos = () => async dispatch => {
+   requests.getAllTodos().then(res => dispatch(setTodosAC(res)))
+
+
 }

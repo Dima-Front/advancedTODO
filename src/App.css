@@ -1,8 +1,14 @@
 .header_container {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: aquamarine;
+    padding-right: 15px;
+
+}
+
+.header_container span {
+    margin-left: auto;
+    cursor: pointer;
 }
 
 .main_container {
@@ -168,4 +174,19 @@
     height: 100px;
     cursor: pointer;
 }
+
+.auth_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.auth_form input {
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+
 

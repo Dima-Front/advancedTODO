@@ -1,7 +1,7 @@
 import {CHANGE_STATUS, FILTERED_TODO, SET_TODOS} from "../reducers/todoReducer";
 
 
-export const getTodosAC = (data) => {
+export const setTodosAC = (data) => {
     return {
         type: SET_TODOS,
         payload: data

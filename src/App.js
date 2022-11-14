@@ -6,6 +6,7 @@ import Aside from "./components/menu/Aside";
 import {Route, Routes} from "react-router-dom";
 import CurrentTodo from "./components/todos/oneTodo/CurrentTodo";
 import MarketMain from "./components/market/MarketMain";
+import AuthForm from "./components/auth/AuthForm";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                     <Route path='/' element={<TodoMain/>}/>
                     <Route path='/todo' element={<CurrentTodo/>}/>
                     <Route path='/posts' element={<MarketMain/>}/>
+                    <Route path='/auth' element={<AuthForm/>} />
                 </Routes>
             </div>
             <Footer/>

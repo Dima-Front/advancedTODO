@@ -1,7 +1,8 @@
 .body {
     display: flex;
     border: 1px solid black;
-   width: 100%;
+    width: 100%;
+
 }
 
 .actions {
@@ -9,4 +10,10 @@
     color: blue;
     margin: 3px;
     cursor: pointer;
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

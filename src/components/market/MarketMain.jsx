@@ -2,17 +2,18 @@ import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
 import MarketItem from "./MarketItem";
 import {useActions} from "../../hooks/useActions";
-import {Link} from "react-router-dom";
-
 
 
 const MarketMain = () => {
     const {getPosts} = useActions()
     const {posts} = useSelector(state => state.posts)
+    const currentPost = posts.filter(post => post.id)[0]
 
     useEffect(() => {
         getPosts()
     }, [])
+
+    console.log(currentPost)
 
 
     return (

@@ -1,4 +1,4 @@
-import {SET_PHOTOS, SET_POSTS} from "../reducers/marketReducer";
+import {ADD_TO_CART, SET_POSTS} from "../reducers/marketReducer";
 
 
 export const setPostsAC = (data) => {
@@ -8,9 +8,9 @@ export const setPostsAC = (data) => {
     }
 }
 
-export const setPhotosAC = (data) => {
+export const addToCartAC = (boolean) => {
     return {
-        type: SET_PHOTOS,
-        payload: data
+        type: ADD_TO_CART,
+        payload: boolean
     }
 }

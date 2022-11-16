@@ -6,13 +6,13 @@ const AuthForm = () => {
             <div className='auth_form'>
                 <div className='auth_login'>
                     <span> Логин </span>
-                    <input type="text"/>
+                    <input type="text" placeholder='Login'/>
                 </div>
                 <div className='auth_password'>
-                <span>пароль </span>
-                    <input type="text"/>
+                <span>пароль</span>
+                    <input type="text" placeholder='Password'/>
                 </div>
-
+            <button> Войти </button>
             </div>
         </div>
     );

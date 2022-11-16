@@ -1,0 +1,12 @@
+.body {
+    display: flex;
+    border: 1px solid black;
+   width: 100%;
+}
+
+.actions {
+    display: flex;
+    color: blue;
+    margin: 3px;
+    cursor: pointer;
+}

@@ -1,21 +1,17 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import MyCheckbox from "../../custom/checkbox/MyCheckbox";
 
 const TodoItem = ({completed, title, todo}) => {
     const [checked, setChecked] = useState(completed)
     const check = useRef('')
 
-    useEffect(() => {
-        if (checked) {
-            setChecked(true)
-        }
-    }, [])
+
 
 
 
     const toggle = (e) => {
         if (Number(e.target.id) === Number(todo.id)) {
-
+            setChecked(!checked)
         }
     }
     

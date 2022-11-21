@@ -25,6 +25,7 @@ export const getPosts = () => async dispatch => {
     const [photos, posts] = await Promise.all([requests.getAllPhotos(), requests.getAllPosts()])
 
     const updatedPosts = posts.map((post, index) => {
+        post.count = 0
         post.url = photos[index].url
         return post
     })

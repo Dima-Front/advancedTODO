@@ -1,9 +1,10 @@
 import React from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 
 const CurrentMarket = () => {
-    const params = useParams();
-const  location = useLocation()
+    const navigate = useNavigate();
+
+    const  location = useLocation()
     const now = new Date();
     const dateOptions =  {
 
@@ -14,17 +15,22 @@ const  location = useLocation()
 
     }
 
+    const goBack = () => {
+        navigate(-1)
+    }
+
     console.log(location)
 
     const RUDate = new Intl.DateTimeFormat('ru', dateOptions )
 
     return (
         <div className='currentMarket_container'>
+            <button className='current_market_back' onClick={() => goBack()}>Назад</button>
           <b> {RUDate.format(now)}  </b>
             <div> {location.state.title}</div>
             <div> {location.state.desc} </div>
             <img className='current_photo' src={location.state.img} alt=""/>
-           <button> Добавить в козину </button>
+           <button className='add_to_cart' > Добавить в козину </button>
         </div>
     );
 };

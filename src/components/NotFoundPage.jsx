@@ -10,7 +10,7 @@ const NotFoundPage = () => {
         <div>
             <button onClick={() => goBack()}> Вернуться назад </button>
             <Link to='/'> На главную </Link>
-          <div> Страница не найдена, проверьте правильность пути </div>
+          <div> Опаньки... А такой страницы и нет( </div>
         </div>
     );
 };

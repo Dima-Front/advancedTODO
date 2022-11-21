@@ -1,23 +1,15 @@
 import React from 'react';
 import counter from './counter.module.css'
 
-const Counter = ({count, setCount}) => {
+const Counter = ({count, increment, decrement, id}) => {
 
-    const increment = () => {
-        setCount(count => count + 1)
-    }
-
-    const decrement = () => {
-        if (count > 0) setCount(count => count - 1)
-
-    }
 
     return (
         <div>
             <div className={counter.body}>
-                <span className={counter.actions} onClick={() => increment()}> + </span>
+                <span id={id} className={counter.actions} onClick={(e) => increment(e)} > + </span>
                 <span className={counter.count}> <b> {count} </b>  </span>
-                <span className={counter.actions} onClick={() => decrement()} > - </span>
+                <span id={id} className={counter.actions} onClick={(e) => decrement(e)} > - </span>
             </div>
         </div>
     );
